@@ -1,0 +1,17 @@
+@import "./components/card.css";
+@import "./components/header.css";
+@import "./components/main.css";
+@import "./theme.css";
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--body-bg);
+}
