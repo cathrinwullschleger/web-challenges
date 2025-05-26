@@ -62,15 +62,26 @@ h1 {
 .box--one {
   background-color: lightblue;
 
-  width: 100px;
+  width: 80%;
   height: 100px;
 }
 
 .box--two {
   background-color: lightgreen;
-
   width: 100px;
   height: 100px;
+}
+
+@media (max-width: 600px) {
+  .box--two {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .box--two {
+    width: 400px;
+  }
 }
 
 .box--three {
@@ -79,12 +90,23 @@ h1 {
   width: 50px;
   height: 250px;
 }
+@media (orientation: landscape) {
+  .box--three {
+    width: 250px;
+    height: 50px;
+  }
+}
 
 .box--four {
   background-color: lightgray;
 
   width: 100px;
   height: 100px;
+}
+@media (prefers-color-scheme: dark) {
+  .box--four {
+    background-color: black;
+  }
 }
 
 .box--five {
