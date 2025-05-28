@@ -1,4 +1,11 @@
 console.clear();
+let coding = "Happy coding";
+console.log(coding);
+let hacking = "Happy hacking";
+console.log(hacking);
+console.clear();
+let error = "This is an error!";
+console.error(error);
 
 // The exercise starts here!
 
