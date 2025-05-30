@@ -22,16 +22,26 @@ if (number % 2 === 0) {
 // Part 3: Hotdogs
 const numberOfHotdogs = 42;
 
+if (numberOfHotdogs > 5) {
+  console.log("2 euro per hotdog");
+} else if (numberOfHotdogs >= 5 && numberOfHotdogs < 100) {
+  console.log("1.50 euro per hotdog");
+} else if (numberOfHotdogs >= 100 && numberOfHotdogs < 1000000) {
+  console.log("1 euro per hotdog");
+} else if (numberOfHotdogs >= 1000000) {
+  console.log("0.10 euro per hotdog");
+}
+
 // Part 4: Daytime
 const currentHour = 12;
-
-const statement = "";
+const statement = currentHour < 17 ? "Still need to learn..." : "Partytime!!!";
 
 console.log(statement);
 
 // Part 5: Greeting
 const userName = "Archibald";
 
-const greeting = "Hello " + "//enter your code here" + "!";
+const greeting =
+  "Hello " + (userName === "Brunhilde1984" ? "Coach" : userName) + "!";
 
 console.log(greeting);
