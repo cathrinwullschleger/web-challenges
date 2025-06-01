@@ -1,6 +1,6 @@
 // Change this value to test different "weather" conditions.
 console.log("How is the weather today?");
-const weather = "rainy";
+const weather = "cold";
 
 switch (weather) {
   case "rainy":
