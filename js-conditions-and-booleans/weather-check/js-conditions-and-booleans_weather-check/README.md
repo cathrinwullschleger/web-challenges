@@ -14,8 +14,7 @@ In this exercise you train to write a `switch` statement. Please also refer to t
   - If the weather is "rainy" → "It's raining, don't forget your umbrella!"
   - If the weather is "snowy" → "It's snowing, stay warm!"
   - For any other input → "I'm not sure what the weather is like."
-> 💡 Tip: Use the `break` statement to avoid the "fall-through" effect.
-
+    > 💡 Tip: Use the `break` statement to avoid the "fall-through" effect.
 
 ### Part 2: Adding Conditions
 
@@ -29,7 +28,6 @@ In this exercise you train to write a `switch` statement. Please also refer to t
   - For any other input → "I'm not sure what the weather is like."
 
 > 💡 Tip: Use the `break` statement to avoid the "fall-through" effect.
-
 
 ### Running the Code
 
