@@ -27,7 +27,7 @@ console.log("Sales:", bookSales);
 Title: The Lord of the Javascript
 Author: Mario
 Rating: 4.2
-Sales: 120node i
+Sales: 120
 
 Then:
 - Increase the number of sales.
