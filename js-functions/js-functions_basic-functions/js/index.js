@@ -9,6 +9,15 @@ console.clear();
 */
 
 // --v-- write your code here --v--
+const bookTitle = "Elf Sekunden";
+const bookAuthor = "Paulo Coelho";
+let bookRating = 10;
+let bookSales = 3200000;
+
+console.log("Title:", bookTitle);
+console.log("Author:", bookAuthor);
+console.log("Rating:", bookRating);
+console.log("Sales:", bookSales);
 
 // --^-- write your code here --^--
 
@@ -18,7 +27,7 @@ console.clear();
 Title: The Lord of the Javascript
 Author: Mario
 Rating: 4.2
-Sales: 120
+Sales: 120node i
 
 Then:
 - Increase the number of sales.
@@ -27,6 +36,11 @@ Then:
 */
 
 // --v-- write your code here --v--
+
+bookSales += 500000;
+console.log("Sales:", bookSales);
+bookRating = 8;
+console.log("Rating:", bookRating);
 
 // --^-- write your code here --^--
 
@@ -40,5 +54,19 @@ Then:
 */
 
 // --v-- write your code here --v--
+function logBookData() {
+  console.log("Title:", bookTitle);
+  console.log("Author:", bookAuthor);
+  console.log("Rating:", bookRating);
+  console.log("Sales:", bookSales);
+}
 
+function increaseNumberOfSales(bookSales, amount) {
+  return bookSales + amount;
+}
+
+bookSales = increaseNumberOfSales(bookSales, 30000);
+logBookData();
+bookSales = increaseNumberOfSales(bookSales, 670000);
+logBookData();
 // --^-- write your code here --^--
