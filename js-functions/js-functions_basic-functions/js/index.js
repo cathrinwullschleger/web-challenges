@@ -46,7 +46,7 @@ console.log("Rating:", bookRating);
 
 /*
 3: The logging code above is repetitive and hard to maintain.
-   Refactor your code by doing the following:
+   Refactor your code by doing the following
 
  - Write a function called `logBookData` that logs all the book details to the console.
  - Replace the existing `console.log` statements with calls to this function.
