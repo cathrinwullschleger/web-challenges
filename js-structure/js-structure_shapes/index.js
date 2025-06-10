@@ -1,9 +1,9 @@
 import { getRandomColor } from "./utils/randomColor.js";
 import { Circle } from "./components/Circle/Circle.js";
-console.clear();
 
 const root = document.getElementById("root");
 
+origin / feature / shapes;
 const square = document.createElement("div");
 square.classList.add("square");
 square.addEventListener("click", () => {
