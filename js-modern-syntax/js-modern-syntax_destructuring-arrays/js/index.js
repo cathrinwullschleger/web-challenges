@@ -20,7 +20,7 @@ Use array destructuring to extract the variables `firstNameOfChris`, `lastNameOf
 const personChris = [12, "Chris", "Owen"];
 personChris[0] = "Chris";
 personChris[1] = "Owen";
-personChris[2] = "12";
+personChris[2] = 12;
 
 export const [firstNameOfChris, lastNameOfChris, ageOfChris] = personChris;
 /*
@@ -31,7 +31,7 @@ Ensure no unused variables remain.
 
 const personAlex = ["Alex", 12, "Main"];
 
-export const [, firstNameOfAlex, lastNameOfAlex] = personAlex;
+export const [firstNameOfAlex, , lastNameOfAlex] = personAlex;
 
 /*
 EXERCISE 4
