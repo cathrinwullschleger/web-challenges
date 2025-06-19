@@ -57,9 +57,22 @@ const words2 = [
   "mystique",
 ];
 
-function averageWordLength(words) {
-  // TODO:
+function averageWordLength(words2) {
+  let totalLengthOfWords = 0;
+  words2.forEach((word) => {
+    totalLengthOfWords += word.length;
+
+    console.log(totalLengthOfWords);
+  });
+
+  let amountOfElements = words2.length;
+
+  console.log(amountOfElements);
+
+  return totalLengthOfWords / amountOfElements;
 }
+
+console.log(averageWordLength(words2));
 
 // Unique arrays - return an array without duplicates
 
@@ -78,8 +91,16 @@ const words3 = [
 ];
 
 function uniquifyArray(words) {
-  // TODO:
+  // Schritt 1: m,it Set ein Seterstellen, dass nur keine Dublikate enthält
+  const uniqueSet = new Set(words);
+  console.log(uniqueSet);
+  // Schritt 2: Spreadoperator wandelt Set in Array um
+  const uniqueArray = [...uniqueSet];
+  console.log(uniqueArray);
+  return uniqueArray;
 }
+
+console.log(uniquifyArray(words3));
 
 // Find elements
 const wordsFind = [
@@ -93,9 +114,13 @@ const wordsFind = [
   "disobedience",
 ];
 
-function doesWordExist(haystack, needle) {
-  // TODO:
+function doesWordExist(wordsList, word) {
+  return wordsList.includes(word);
 }
+
+doesWordExist(wordsFind, "matter");
+
+console.log(doesWordExist(wordsFind, "matter"));
 
 // Count repetition
 
@@ -113,9 +138,12 @@ const wordsCount = [
   "matter",
 ];
 
-function howManyTimes(haystack, needle) {
-  // TODO:
+function howManyTimes(wordsCount, word) {
+  return wordsCount.filter((element) => element === word).length;
 }
+
+howManyTimes(wordsCount, "matter");
+console.log(howManyTimes(wordsCount, "matter"));
 
 // Bonus: A generic sum function
 // for strings use the length of the string, for booleans use 1 and 0
