@@ -1,9 +1,11 @@
 import "./styles.css";
 import { useState } from "react";
+import { useRef } from "react";
 
 export default function App() {
   const [holiday, setHoliday] = useState("");
   const [date, setDate] = useState("");
+  const holidayInputRef = useRef(null); // React-Hook, Box die später gefüllt werden kann um fokus zu setzen
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -12,6 +14,9 @@ export default function App() {
 
     setHoliday(holidayValue);
     setDate(dateValue);
+
+    event.target.reset();
+    holidayInputRef.current.focus(); // Fokus auf Holiday-Feld setzen
   }
 
   return (
@@ -25,6 +30,7 @@ export default function App() {
       >
         <label htmlFor="holiday">My Favourite Holiday: </label>
         <input
+          ref={holidayInputRef} // hier wird der Fokus gesetzt
           id="holiday"
           type="text"
           name="holiday"
@@ -38,16 +44,10 @@ export default function App() {
       </form>
       <h2>Output of Submitted Data</h2>
       <p>
-        Favourite Holiday:{" "}
-        <span className="output" holiday>
-          New Year
-        </span>
+        Favourite Holiday: <span className="output">{holiday}</span>
       </p>
       <p>
-        Date:{" "}
-        <span className="output" date>
-          Well...
-        </span>
+        Date: <span className="output">{date}</span>
       </p>
     </div>
   );
