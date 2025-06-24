@@ -1,11 +1,14 @@
 import { D6Button } from "./components/D6Button";
-import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
+
 import History from "./components/History";
 import "./styles.css";
 import { getD6Roll } from "./utils";
 
 export default function App() {
-  const [rolls, setRolls] = useState([]);
+  const [rolls, setRolls] = useLocalStorageState("rolls", {
+    defaultValue: [],
+  });
   // function, die einen neuen Würfelwurf erzeugt, State aktualisiert
   // newRoll wird erstellt und an den Anfang der Arrays(roll) gesetzt
   function handleRoll() {
