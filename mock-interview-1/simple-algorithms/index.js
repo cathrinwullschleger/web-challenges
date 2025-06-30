@@ -139,9 +139,10 @@ const wordsCount = [
 ];
 
 function howManyTimes(wordsCount, word) {
-  return wordsCount.filter((element) => element === word).length;
+  // Array, element)
+  return wordsCount.filter((element) => element === word).length; // im Array filtern durch die elemente (oben word) und lenght um die häufigkeit zu überprüfen
 }
-
+// element bedeuetet, das akutelle element das mit word verglichen wird, ob es gleich ist
 howManyTimes(wordsCount, "matter");
 console.log(howManyTimes(wordsCount, "matter"));
 

@@ -25,24 +25,26 @@ export default function PokemonList() {
 
   return (
     <main>
-      <button
-        type="button"
-        onClick={() => {
-          if (pokemon.previous !== null) setURL(pokemon.previous);
-        }}
-        disabled={pokemon.previous === null}
-      >
-        Previous Page
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          if (pokemon.next !== null) setURL(pokemon.next);
-        }}
-        disabled={pokemon.next === null}
-      >
-        Next Page
-      </button>
+      {pokemon.previous && (
+        <button
+          type="button"
+          onClick={() => {
+            setURL(pokemon.previous);
+          }}
+        >
+          Previous Page
+        </button>
+      )}
+      {pokemon.next && (
+        <button
+          type="button"
+          onClick={() => {
+            setURL(pokemon.next);
+          }}
+        >
+          Next Page
+        </button>
+      )}
       <ul>
         {pokemon.results.map(({ name }) => (
           <li key={name}>{name}</li>

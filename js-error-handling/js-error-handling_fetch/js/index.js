@@ -9,12 +9,14 @@ async function fetchUserData(url) {
     const response = await fetch(url, {
       headers: { "x-api-key": "reqres-free-v1" },
     });
+    console.log(response);
     if (!response.ok) {
       throw new Error(`Failed to fetch data! Status Code: ${response.status}`);
     }
 
     const contentType = response.headers.get("content-type");
-    if (!contentType.includes("json")) {
+    console.log(contentType);
+    if (!contentType.includes("application/json")) {
       throw new Error(`Failed to wrong content-type: ${contentType}`);
     }
 

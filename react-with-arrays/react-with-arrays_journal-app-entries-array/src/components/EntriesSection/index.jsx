@@ -48,18 +48,15 @@ export default function EntriesSection() {
         </Tab>
       </Tabs>
       <div className="entries-section__entries">
-        <ul>
-          {entries.map((entry, index) => {
-            return (
-              <Fragment key={entry.id}>
-                <li>
-                  <Entry entry={entry} />
-                </li>
-                {index < entries.length - 1 && <Divider />}
-              </Fragment>
-            );
-          })}
-        </ul>
+        {entries.map((entry, index) => {
+          return (
+            <Fragment key={entry.id}>
+              <Entry entry={entry} />
+
+              {index < entries.length - 1 && <Divider />}
+            </Fragment>
+          );
+        })}
       </div>
     </section>
   );

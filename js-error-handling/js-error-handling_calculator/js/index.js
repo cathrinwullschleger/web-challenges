@@ -28,5 +28,6 @@ form.addEventListener("submit", (event) => {
     console.log(
       "Please choose a number other than 0 as the divisor, thank you!"
     );
+    output.innerText = error.message;
   }
 });
