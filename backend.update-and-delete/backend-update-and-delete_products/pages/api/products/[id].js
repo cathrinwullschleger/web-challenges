@@ -7,7 +7,7 @@ export default async function handler(request, response) {
 
   if (request.method === "GET") {
     const product = await Product.findById(id).populate("reviews");
-    console.log(product);
+
     if (!product) {
       response.status(404).json({ status: "Not Found" });
       return;
@@ -16,7 +16,6 @@ export default async function handler(request, response) {
     response.status(200).json(product);
     return;
   }
-
   if (request.method === "PUT") {
     const updatedProduct = request.body;
     await Product.findByIdAndUpdate(id, updatedProduct);
@@ -25,5 +24,11 @@ export default async function handler(request, response) {
       .json({ status: `Product ${id} is successfully updated` });
   }
 
+  if (request.method === "DELETE") {
+    await Product.findByIdAndDelete(id);
+    return response
+      .status(200)
+      .json({ status: `Product ${id} is successfully deleted` });
+  }
   response.status(405).json({ status: "Method not allowed." });
 }
