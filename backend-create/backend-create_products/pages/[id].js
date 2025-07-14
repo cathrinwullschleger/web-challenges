@@ -3,12 +3,30 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import StyledLink from "@/components/Link";
 import Comments from "@/components/Comments.js";
+
 export default function Product() {
   const router = useRouter();
   const { id } = router.query;
 
-  const { data, isLoading } = useSWR(`/api/products/${id}`);
+  const { data, isLoading, mutate } = useSWR(`/api/products/${id}`);
 
+  async function handleEdit(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const updatedProduct = Object.fromEntries(formData);
+
+    const response = await fetch(`/api/products/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    });
+    if (response.ok) {
+      mutate();
+    }
+  }
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
